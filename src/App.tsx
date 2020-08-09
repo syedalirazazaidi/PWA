@@ -17,21 +17,6 @@ function App() {
         </h2>
         <Expenses />
 
-        {/* <div className="toggle-container">
-          <span>income</span>
-          <span>
-            <input type="checkbox" name="toggle" id="toggle" />
-            <label
-              htmlFor="toggle"
-              value={btn}
-              onChange={(e) => setBtn(console.log(e.target.value))}
-            >
-              <div className="ball"></div>
-            </label>
-          </span>
-          <span>expence</span>
-        </div> */}
-
         <div className="tracker-app">
           <h4>
             <TransationalList />

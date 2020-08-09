@@ -3,19 +3,19 @@
   "name": "Expense Tracker App",
   "icons": [
     {
-      "src": "money.png",
-      "sizes": "64x64 32x32 24x24 16x16",
-      "type": "image/x-icon"
+      "src": "images/icons/mk-128.png",
+      "sizes": "128x128",
+      "type": "image/png"
     },
     {
-      "src": "money.png",
-      "type": "image/png",
-      "sizes": "192x192"
+      "src": "images/icons/iconfinder_27_3319617.png",
+      "sizes": "512x512",
+      "type": "image/png"
     },
     {
-      "src": "money.png",
-      "type": "image/png",
-      "sizes": "512x512"
+      "src": "images/icons/icons8-paper-money-48.png",
+      "sizes": "48x48",
+      "type": "image/png"
     }
   ],
   "start_url": ".",
