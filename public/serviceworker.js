@@ -1,11 +1,10 @@
 const CACHE_NAME = "Expense App";
 const urlsToCache = [
+  "/",
+  "/index.html",
   "/static/js/bundle.js",
   "/static/js/main.chunk.js",
-  "/static/js/0.chunk.js",
-  "inex.html",
-
-  "/",
+  "/static/js/1.chunk.js",
 ];
 
 const self = this;
@@ -21,27 +20,33 @@ self.addEventListener("install", (event) => {
 
 // Listen for requests
 self.addEventListener("fetch", (event) => {
-  event.respondWith(
-    caches.match(event.request).then(() => {
-      return fetch(event.request).catch(() => caches.match("offline.html"));
-    })
-  );
+  if (!navigator.onLine) {
+    event.respondWith(
+      caches.match(event.request).then((result) => {
+        if (result) {
+          return result;
+        }
+        // console.log("result", result);
+        // return fetch(event.request).catch(() => caches.match(urlsToCache));
+      })
+    );
+  }
 });
 
 // Activate the SW
-self.addEventListener("activate", (event) => {
-  const cacheWhitelist = [];
-  cacheWhitelist.push(CACHE_NAME);
+// self.addEventListener("activate", (event) => {
+//   const cacheWhitelist = [];
+//   cacheWhitelist.push(CACHE_NAME);
 
-  event.waitUntil(
-    caches.keys().then((cacheNames) =>
-      Promise.all(
-        cacheNames.map((cacheName) => {
-          if (!cacheWhitelist.includes(cacheName)) {
-            return caches.delete(cacheName);
-          }
-        })
-      )
-    )
-  );
-});
+//   event.waitUntil(
+//     caches.keys().then((cacheNames) =>
+//       Promise.all(
+//         cacheNames.map((cacheName) => {
+//           if (!cacheWhitelist.includes(cacheName)) {
+//             return caches.delete(cacheName);
+//           }
+//         })
+//       )
+//     )
+//   );
+// });
