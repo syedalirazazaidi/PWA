@@ -15,7 +15,7 @@ function App() {
   return (
     <GLobalProvider>
       <div className="container">
-        <h1>Expence Tracker App</h1>
+        <h1>Expence Tracker-App</h1>
         <h2 style={{ marginTop: "0px" }}>
           <Balance />
         </h2>
