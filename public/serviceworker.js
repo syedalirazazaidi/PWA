@@ -1,10 +1,10 @@
 const CACHE_NAME = "Expense App";
 const urlsToCache = [
-  "./",
-  "./index.html",
-  "./static/js/bundle.js",
-  "./static/js/main.chunk.js",
-  "./static/js/1.chunk.js",
+  "/",
+  "/index.html",
+  "/static/js/bundle.js",
+  "/static/js/main.chunk.js",
+  "/static/js/0.chunk.js",
 ];
 
 const self = this;
@@ -12,10 +12,13 @@ const self = this;
 // Install SW
 self.addEventListener("install", (event) => {
   event.waitUntil(
-    caches.open(CACHE_NAME).then((cache) => {
-      console.log(cache, "files");
-      return cache.addAll(urlsToCache);
-    })
+    caches
+      .open(CACHE_NAME)
+      .then((cache) => {
+        console.log(cache, "files");
+        return cache.addAll(urlsToCache);
+      })
+      .then(() => self.skipWaiting())
   );
 });
 
