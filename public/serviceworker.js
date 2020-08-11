@@ -1,10 +1,10 @@
 const CACHE_NAME = "Expense App";
 const urlsToCache = [
-  "/",
-  "/index.html",
-  "/static/js/bundle.js",
-  "/static/js/main.chunk.js",
-  "/static/js/1.chunk.js",
+  "./",
+  "./index.html",
+  "./static/js/bundle.js",
+  "./static/js/main.chunk.js",
+  "./static/js/1.chunk.js",
 ];
 
 const self = this;
