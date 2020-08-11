@@ -3,7 +3,7 @@
   "name": "Expense Tracker App",
   "icons": [
     {
-      "src": "images/icons/iconfinder_27_3319617.png",
+      "src": "/images/icons/iconfinder_27_3319617.png",
       "sizes": "512x512",
       "type": "image/png"
     }
