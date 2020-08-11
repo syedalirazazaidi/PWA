@@ -1,15 +1,11 @@
-// export const register = () => {
-//   if ("serviceWorker" in navigator) {
-//     window.addEventListener("load", () => {
-//       let swURL = `${process.env.PUBLIC_URL}/serviceworker.js`;
-//       navigator.serviceWorker
-//         .register(swURL)
-//         .then((reg) => console.log("Success: ", reg.scope))
-//         .catch((err) => console.log("Failure: ", err));
-//     });
-//   }
-// };
-export default function swDev() {
-  let swUrl = `${process.env.PUBLIC_URL}/serviceWorker.js`;
-  navigator.serviceWorker.register(swUrl).then((result) => console.log(result));
-}
+export const register = () => {
+  if ("serviceWorker" in navigator) {
+    window.addEventListener("load", () => {
+      let swURL = `${process.env.PUBLIC_URL}/serviceworker.js`;
+      navigator.serviceWorker
+        .register(swURL)
+        .then((reg) => console.log("Success: ", reg.scope))
+        .catch((err) => console.log("Failure: ", err));
+    });
+  }
+};
